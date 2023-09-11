@@ -34,8 +34,8 @@ jobs:
         run: |
           git config --global user.email "pololopo@yandex.ru"
           git config --global user.name "lokasan"
-          git checkout gh-pages
-          cp -r build/* . # Замените на команды, чтобы скопировать собранный сайт в целевую ветку
+          git checkout gh_pages
+          cp -r build/* .
           git add .
           git commit -m "Deploy site"
           git push
