@@ -1,0 +1,35 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main # Замените на имя вашей основной ветки
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build site
+        run: npm run build # Замените на вашу команду сборки
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.email "pololopo@yandex.ru"
+          git config --global user.name "lokasan"
+          git checkout gh-pages
+          cp -r build/* . # Замените на команды, чтобы скопировать собранный сайт в целевую ветку
+          git add .
+          git commit -m "Deploy site"
+          git push
