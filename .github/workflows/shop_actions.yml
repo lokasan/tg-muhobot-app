@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main # Замените на имя вашей основной ветки
+      - master
 
 jobs:
   build-and-deploy:
@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build site
-        run: npm run build # Замените на вашу команду сборки
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
