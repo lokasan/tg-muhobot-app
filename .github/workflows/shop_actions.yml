@@ -4,10 +4,16 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
 
     steps:
       - name: Checkout repository
@@ -16,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
