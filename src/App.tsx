@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
+import {Button} from "./Components/Button/Button";
+
+declare global {
+    interface Window {
+        Telegram: {
+            WebApp: {
+                close: () => {},
+                ready: () => {}
+            }
+        }
+    }
+}
+
+const tg = window.Telegram.WebApp;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    useEffect(() => {
+        return () => {
+            tg.ready()
+        };
+    }, []);
+
+
+    const onClose = () => {
+        tg.close()
+    }
+    return (
+    <>
+      Shop Store
+      <Button action_type='add' title='+' isDisable={false} onClick={() => {}}/>
+      <Button action_type='remove' title='-' isDisable={false} onClick={() => {}}/>
+      <Button action_type='checkout' title='Order' isDisable={false} onClick={() => {}}/>
+      <Button action_type='close' title='Закрыть' isDisable={false} onClick={onClose}/>
+    </>
   );
 }
 
