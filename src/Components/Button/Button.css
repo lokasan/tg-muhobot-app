@@ -61,3 +61,7 @@
 .btn.close {
     background-color: rgb(120, 70, 80);
 }
+
+.btn.close:hover {
+    background-color: rgb(140, 80, 90);
+}
