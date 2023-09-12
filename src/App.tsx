@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import {Button} from "./Components/Button/Button";
+import {Header} from "./Components/Header/Header";
 
 declare global {
     interface Window {
@@ -13,7 +14,7 @@ declare global {
     }
 }
 
-const tg = window.Telegram.WebApp;
+export const tg = window.Telegram.WebApp;
 
 function App() {
     useEffect(() => {
@@ -22,17 +23,12 @@ function App() {
         };
     }, []);
 
-
     const onClose = () => {
         tg.close()
     }
     return (
     <>
-      Shop Store
-      <Button action_type='add' title='+' isDisable={false} onClick={() => {}}/>
-      <Button action_type='remove' title='-' isDisable={false} onClick={() => {}}/>
-      <Button action_type='checkout' title='Order' isDisable={false} onClick={() => {}}/>
-      <Button action_type='close' title='Закрыть' isDisable={false} onClick={onClose}/>
+      <Header/>
     </>
   );
 }
