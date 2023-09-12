@@ -11,10 +11,15 @@ declare global {
                 ready: () => {},
                 initDataUnsafe: {
                     user: {
-                        username: string
-                    }
-                }
-            }
+                        username: string,
+                    },
+                },
+                MainButton: {
+                    show: () => void,
+                    hide: () => void,
+                    isVisible: boolean,
+                },
+            },
         }
     }
 }
