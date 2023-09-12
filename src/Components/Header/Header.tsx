@@ -13,6 +13,7 @@ export const Header = () => {
 
     return (
         <div className={'header'}>
+            <span className={'username'}>{tg.initDataUnsafe?.user?.username}</span>
             <Button action_type="close" title={'Закрыть'} isDisable={false} onClick={onClose}/>
         </div>
     );

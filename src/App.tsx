@@ -8,7 +8,12 @@ declare global {
         Telegram: {
             WebApp: {
                 close: () => {},
-                ready: () => {}
+                ready: () => {},
+                initDataUnsafe: {
+                    user: {
+                        username: string
+                    }
+                }
             }
         }
     }
