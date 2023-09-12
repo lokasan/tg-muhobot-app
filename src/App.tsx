@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {Button} from "./Components/Button/Button";
 import {Header} from "./Components/Header/Header";
 
 declare global {
@@ -33,9 +32,6 @@ function App() {
         };
     }, []);
 
-    const onClose = () => {
-        tg.close()
-    }
     return (
     <>
       <Header/>
