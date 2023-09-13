@@ -20,9 +20,12 @@ declare global {
                     show: () => void,
                     hide: () => void,
                     isVisible: boolean,
-                    setParams: ({text}: {text: string}) => {}
+                    setParams: ({text}: { text: string }) => {}
                 },
-            },
+                onEvent: (cls: string, callback: () => void) => void,
+                offEvent: (cls: string, callback: () => void) => void,
+                sendData: (bytes: string) => void
+            }
         }
     }
 }
