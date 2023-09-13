@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import {Header} from "./Components/Header/Header";
+import {Route, Routes} from "react-router-dom"
+import {ProductList} from "./Components/ProductList/ProductList";
+import {Form} from "./Components/Form/Form";
 
 declare global {
     interface Window {
@@ -17,6 +20,7 @@ declare global {
                     show: () => void,
                     hide: () => void,
                     isVisible: boolean,
+                    setParams: ({text}: {text: string}) => {}
                 },
             },
         }
@@ -35,6 +39,10 @@ function App() {
     return (
     <>
       <Header/>
+        <Routes>
+            <Route index element={<ProductList/>}/>
+            <Route path={'/form'} element={<Form/>}/>
+        </Routes>
     </>
   );
 }
