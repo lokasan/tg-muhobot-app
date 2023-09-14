@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tg-muhobot-app/static/css/main.9ac8dbe9.css",
-    "main.js": "/tg-muhobot-app/static/js/main.944a6262.js",
+    "main.css": "/tg-muhobot-app/static/css/main.b6eebd9c.css",
+    "main.js": "/tg-muhobot-app/static/js/main.4a3c6bb7.js",
     "index.html": "/tg-muhobot-app/index.html",
-    "main.9ac8dbe9.css.map": "/tg-muhobot-app/static/css/main.9ac8dbe9.css.map",
-    "main.944a6262.js.map": "/tg-muhobot-app/static/js/main.944a6262.js.map"
+    "main.b6eebd9c.css.map": "/tg-muhobot-app/static/css/main.b6eebd9c.css.map",
+    "main.4a3c6bb7.js.map": "/tg-muhobot-app/static/js/main.4a3c6bb7.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ac8dbe9.css",
-    "static/js/main.944a6262.js"
+    "static/css/main.b6eebd9c.css",
+    "static/js/main.4a3c6bb7.js"
   ]
 }
