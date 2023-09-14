@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {Header} from "./Components/Header/Header";
 import {Route, Routes} from "react-router-dom"
 import {ProductList} from "./Components/ProductList/ProductList";
 import {Form} from "./Components/Form/Form";
@@ -14,6 +13,7 @@ declare global {
                 initDataUnsafe: {
                     user: {
                         username: string,
+                        query_id: number,
                     },
                 },
                 MainButton: {
@@ -24,7 +24,7 @@ declare global {
                 },
                 onEvent: (cls: string, callback: () => void) => void,
                 offEvent: (cls: string, callback: () => void) => void,
-                sendData: (bytes: string) => void
+                sendData: (bytes: string) => void,
             }
         }
     }
@@ -41,7 +41,6 @@ function App() {
 
     return (
     <>
-      <Header/>
         <Routes>
             <Route index element={<ProductList/>}/>
             <Route path={'/tg-muhobot-app/form'} element={<Form/>}/>
